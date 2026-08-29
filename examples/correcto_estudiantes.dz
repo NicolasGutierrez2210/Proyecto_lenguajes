@@ -1,0 +1,41 @@
+# Analisis de rendimiento academico de estudiantes
+
+# 1. Carga de datos
+estudiantes = cargar("datos/notas_universidad.csv", separador=";", encabezado=verdadero)
+
+# 2. Limpieza de datos y creacion de columnas calculadas
+datos_procesados = estudiantes
+    |> tratar_nulos(accion="rellenar", valor=0.0)
+    |> eliminar_duplicados(columnas=[id_estudiante])
+    |> filtrar(estado == "matriculado" y asistencia >= 75)
+    |> crear(
+        nota_final = (parcial1 * 0.3) + (parcial2 * 0.3) + (proyecto * 0.4),
+        aprobado = nota_final >= 3.0
+    )
+
+# 3. Resumen por carrera academica
+resumen_carreras = datos_procesados
+    |> agrupar(por=[carrera])
+    |> resumir(
+        promedio_final = media(nota_final),
+        nota_maxima = maximo(nota_final),
+        nota_minima = minimo(nota_final),
+        total_alumnos = contar()
+    )
+
+# 4. Declaracion de graficas descriptivas
+graficar histograma(datos_procesados) {
+    eje_x = nota_final
+    titulo = "Distribucion de Notas Finales"
+    guardar = "salidas/distribucion_notas.png"
+}
+
+graficar caja(datos_procesados) {
+    eje_x = carrera
+    eje_y = nota_final
+    titulo = "Rendimiento por Carrera"
+    guardar = "salidas/caja_carreras.png"
+}
+
+# 5. Guardar reporte final
+guardar(resumen_carreras, en="salidas/reporte_carreras.csv")

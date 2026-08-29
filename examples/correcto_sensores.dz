@@ -1,0 +1,43 @@
+# Monitoreo de sensores ambientales y condiciones climaticas
+
+# 1. Definicion de funciones auxiliares
+funcion calcular_indice_calor(temperatura, humedad) {
+    retornar temperatura + (0.5555 * ((humedad / 100) * 10 - 10));
+}
+
+# 2. Carga y procesamiento del flujo de datos
+sensores = cargar("datos/lecturas_iot.csv")
+
+lecturas_validas = sensores
+    |> filtrar(temperatura >= -10.0 y temperatura <= 60.0 y humedad >= 0 y humedad <= 100)
+    |> crear(
+        indice_calor = calcular_indice_calor(temperatura, humedad),
+        alerta_critica = temperatura > 35.0 o humedad < 20.0
+    )
+    |> ordenar(por=[indice_calor], descendente=falso)
+
+# 3. Agregacion por ubicacion del sensor
+resumen_zonas = lecturas_validas
+    |> agrupar(por=[zona_instalacion])
+    |> resumir(
+        temp_promedio = media(temperatura),
+        hum_promedio = media(humedad),
+        temp_max = maximo(temperatura),
+        muestras_registradas = contar()
+    )
+
+# 4. Graficos de monitoreo
+graficar lineas(lecturas_validas) {
+    eje_x = timestamp
+    eje_y = temperatura
+    titulo = "Serie Temporal de Temperatura"
+    guardar = "salidas/serie_temperatura.png"
+}
+
+# 5. Condicional de alerta y guardado
+si (resumen_zonas != nulo) {
+    guardar(resumen_zonas, en="salidas/resumen_zonas.csv");
+    mostrar("Procesamiento de sensores finalizado con exito");
+} sino {
+    mostrar("No se encontraron registros validos para procesar");
+}

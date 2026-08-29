@@ -1,0 +1,8 @@
+# Ejemplo con errores lexicos intencionales para verificar el analizador lexico
+
+# Error lexico 1: Caracteres no permitidos en el lenguaje (@, $, ~)
+variable@invalida = 500 $ 20 ~ 3;
+
+# Error lexico 2: Cadena de texto sin comilla de cierre
+texto_invalido = "Cadena que nunca se cerro
+mostrar(texto_invalido)

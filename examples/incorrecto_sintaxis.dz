@@ -1,0 +1,12 @@
+# Ejemplo con errores sintacticos intencionales para verificar el diagnostico
+
+# Error 1: Falta cerrar el parentesis en la funcion cargar
+datos = cargar("datos/archivo.csv"
+
+# Error 2: Asignacion incompleta y operador pipeline sin expresion previa
+tabla = |> filtrar(edad > 18)
+
+# Error 3: Estructura de bloque sin cerrar
+graficar barras(datos) {
+    eje_x = categoria
+    titulo = "Grafico incompleto"
