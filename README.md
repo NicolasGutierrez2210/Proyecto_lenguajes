@@ -1,4 +1,4 @@
-# DaZe: Lenguaje de Dominio Especifico para Ciencia de Datos y Visualizacion
+# DaZe: Lenguaje de dominio especifico para ciencia de datos y visualizacion
 
 DaZe (`.dz`) es un lenguaje de dominio especifico disenado para estructurar flujos reproducibles de analisis de datos, preparacion tabular y generacion de graficos. El objetivo del lenguaje es ofrecer una sintaxis clara, directa y en espanol, apoyada en el encadenamiento de operaciones mediante pipelines (`|>`), permitiendo expresar transformaciones de datos sin requerir codigo complejo de proposito general.
 
