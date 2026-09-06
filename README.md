@@ -1,14 +1,14 @@
 # DaZe: Sports Analytics DSL (Lenguaje de Dominio Específico)
 
-DaZe (`.dz`) es un lenguaje de dominio específico diseñado para estructurar flujos reproducibles de análisis de datos deportivos, preparación tabular de plantillas y generación de pizarras gráficas[cite: 3]. El objetivo del lenguaje es ofrecer una sintaxis clara, directa y formal basada en el ámbito de la analítica deportiva, apoyada en el encadenamiento de operaciones mediante pipelines (`|>`), permitiendo expresar transformaciones de datos sin requerir código complejo de propósito general[cite: 3].
+DaZe (`.dz`) es un lenguaje de dominio específico diseñado para estructurar flujos reproducibles de análisis de datos deportivos, preparación tabular de plantillas y generación de pizarras gráficas. El objetivo del lenguaje es ofrecer una sintaxis clara, directa y formal basada en el ámbito de la analítica deportiva, apoyada en el encadenamiento de operaciones mediante pipelines (`|>`), permitiendo expresar transformaciones de datos sin requerir código complejo de propósito general.
 
-El proyecto implementa la definición formal, el analizador léxico, el analizador sintáctico y las herramientas de validación y visualización del árbol de análisis sintáctico, utilizando ANTLR4 y Python 3.11+[cite: 3, 4].
+El proyecto implementa la definición formal, el analizador léxico, el analizador sintáctico y las herramientas de validación y visualización del árbol de análisis sintáctico, utilizando ANTLR4 y Python 3.11+.
 
 ---
 
 ## Estructura del Proyecto
 
-La organización modular del repositorio se divide de la siguiente manera[cite: 1]:
+La organización modular del repositorio se divide de la siguiente manera:
 
 ```text
 proyecto_lenguajes/
@@ -48,24 +48,24 @@ proyecto_lenguajes/
 ## Características del Lenguaje DaZe
 
 ### 1. Carga y Exportación de Conjuntos de Datos
-Permite leer y escribir archivos CSV asociando los datos a variables y configurando delimitadores o encabezados[cite: 3]:
+Permite leer y escribir archivos CSV asociando los datos a variables y configurando delimitadores o encabezados:
 ```daze
 datos = fichar("datos/plantilla_temporada.csv", separador=",", encabezado=verdadero)
 archivar(resumen, en="salidas/resumen_posiciones.csv", separador=",")
 ```
 
 ### 2. Pipelines de Transformación (`|>`)
-Las operaciones se encadenan de forma secuencial, recibiendo un dataset y produciendo uno nuevo[cite: 3]:
-- `convocar(...)`: Proyección y selección de columnas[cite: 3].
-- `descartar(...)`: Filtrado de filas mediante expresiones booleanas[cite: 3].
-- `contratar(...)`: Creación o modificación de columnas calculadas[cite: 3].
-- `rebautizar(...)`: Cambio de nombres de variables[cite: 3].
-- `clasificar(...)`: Ordenamiento ascendente o descendente[cite: 3].
-- `alinear(...)`: Definición de variables de agrupación[cite: 3].
-- `balance(...)`: Agregaciones descriptivas (`suma`, `media`, `mediana`, `minimo`, `maximo`, `desv_std`, `contar`)[cite: 3].
-- `reemplazar_bajas(...)`: Imputación o descarte de datos faltantes[cite: 3].
-- `depurar_plantilla(...)`: Limpieza de registros redundantes[cite: 3].
-- `top(...)`: Selección de un número determinado de filas[cite: 3].
+Las operaciones se encadenan de forma secuencial, recibiendo un dataset y produciendo uno nuevo:
+- `convocar(...)`: Proyección y selección de columnas.
+- `descartar(...)`: Filtrado de filas mediante expresiones booleanas.
+- `contratar(...)`: Creación o modificación de columnas calculadas.
+- `rebautizar(...)`: Cambio de nombres de variables.
+- `clasificar(...)`: Ordenamiento ascendente o descendente.
+- `alinear(...)`: Definición de variables de agrupación.
+- `balance(...)`: Agregaciones descriptivas (`suma`, `media`, `mediana`, `minimo`, `maximo`, `desv_std`, `contar`).
+- `reemplazar_bajas(...)`: Imputación o descarte de datos faltantes.
+- `depurar_plantilla(...)`: Limpieza de registros redundantes.
+- `top(...)`: Selección de un número determinado de filas.
 
 Ejemplo:
 ```daze
@@ -78,13 +78,13 @@ jugadores_aptos = jugadores
 ```
 
 ### 3. Expresiones y Operadores
-- Aritmética: Suma (`+`), resta (`-`), multiplicación (`*`), división (`/`), módulo (`%`), potencia (`^` o `**`)[cite: 3].
-- Comparación: `==`, `!=`, `<`, `<=`, `>`, `>=`[cite: 3].
-- Lógica: `y` (`and`), `o` (`or`), `no` (`not`)[cite: 3].
-- Literales: Enteros, decimales, cadenas (comillas simples o dobles), booleanos (`verdadero`/`falso`) y nulos (`nulo`)[cite: 3].
+- Aritmética: Suma (`+`), resta (`-`), multiplicación (`*`), división (`/`), módulo (`%`), potencia (`^` o `**`).
+- Comparación: `==`, `!=`, `<`, `<=`, `>`, `>=`.
+- Lógica: `y` (`and`), `o` (`or`), `no` (`not`).
+- Literales: Enteros, decimales, cadenas (comillas simples o dobles), booleanos (`verdadero`/`falso`) y nulos (`nulo`).
 
 ### 4. Declaración de Visualizaciones
-Sintaxis para especificar representaciones visuales y pizarras tácticas[cite: 3]:
+Sintaxis para especificar representaciones visuales y pizarras tácticas:
 ```daze
 pizarra barras(resumen_posiciones) {
     eje_x = posicion
@@ -111,20 +111,20 @@ si (goles_totales > 50) {
 
 ## Manejo de Errores y Diagnóstico
 
-El módulo `src/errors.py` implementa `DaZeErrorListener`, el cual sustituye el listener por defecto de ANTLR[cite: 1, 3, 4]. Este componente intercepta los errores durante las etapas léxica y sintáctica, reportando mensajes claros en español con la siguiente información[cite: 3]:
-- Tipo de error (Léxico o Sintáctico)[cite: 3].
-- Número de línea y columna exacta[cite: 3, 4].
-- Símbolo o token causante del problema[cite: 3, 4].
-- Mensaje descriptivo con el elemento esperado[cite: 3, 4].
+El módulo `src/errors.py` implementa `DaZeErrorListener`, el cual sustituye el listener por defecto de ANTLR. Este componente intercepta los errores durante las etapas léxica y sintáctica, reportando mensajes claros en español con la siguiente información:
+- Tipo de error (Léxico o Sintáctico).
+- Número de línea y columna exacta.
+- Símbolo o token causante del problema.
+- Mensaje descriptivo con el elemento esperado.
 
 ---
 
 ## Guía de Ejecución en Linux
 
-A continuación se describen los pasos necesarios para preparar el entorno, compilar la gramática y ejecutar las pruebas o el analizador desde la terminal en sistemas operativos basados en Linux (Ubuntu, Debian, Fedora, Arch, instancias EC2 de AWS, etc.)[cite: 3].
+A continuación se describen los pasos necesarios para preparar el entorno, compilar la gramática y ejecutar las pruebas o el analizador desde la terminal en sistemas operativos basados en Linux (Ubuntu, Debian, Fedora, Arch, instancias EC2 de AWS, etc.).
 
 ### 1. Requisitos Previos
-Asegurarse de tener instalados Python 3.11 o superior, pip y una versión reciente de Java (JRE/JDK 11+ para compilar gramáticas ANTLR)[cite: 3]:
+Asegurarse de tener instalados Python 3.11 o superior, pip y una versión reciente de Java (JRE/JDK 11+ para compilar gramáticas ANTLR):
 
 ```bash
 sudo apt update
@@ -144,47 +144,47 @@ source venv/bin/activate
 ```
 
 ### 4. Instalar Dependencias
-Instalar el runtime de ANTLR4 y las bibliotecas del proyecto[cite: 1, 3]:
+Instalar el runtime de ANTLR4 y las bibliotecas del proyecto:
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 5. Generación de Archivos ANTLR4 (Opcional)
-Los archivos generados ya se encuentran incluidos en `src/generated/`[cite: 1, 3]. No obstante, si se realizan modificaciones en `grammar/DaZeLexer.g4` o `grammar/DaZeParser.g4`, se pueden regenerar ejecutando[cite: 1, 3]:
+Los archivos generados ya se encuentran incluidos en `src/generated/`. No obstante, si se realizan modificaciones en `grammar/DaZeLexer.g4` o `grammar/DaZeParser.g4`, se pueden regenerar ejecutando:
 
 ```bash
 cd grammar
 antlr4 -Dlanguage=Python3 DaZeLexer.g4
 antlr4 -Dlanguage=Python3 -visitor DaZeParser.g4
-mv DaZe* ../src/generated/
-rm -f ../src/generated/*.g4
+cp *.py *.tokens ../src/generated/
+rm *.py *.tokens *.interp
 cd ..
 ```
 
 ### 6. Ejecución de la Batería de Pruebas
-Para correr todas las pruebas unitarias (léxicas, sintácticas y de errores)[cite: 1, 3]:
+Para correr todas las pruebas unitarias (léxicas, sintácticas y de errores):
 ```bash
 python3 -m unittest discover -s tests -p "test_*.py" -v
 ```
 
 ### 7. Uso de la Herramienta CLI
 
-Para validar la sintaxis de un archivo DaZe[cite: 1, 3]:
+Para validar la sintaxis de un archivo DaZe:
 ```bash
 python3 src/cli.py --check examples/correcto_ventas.dz
 ```
 
-Para inspeccionar la secuencia de tokens reconocidos por el lexer[cite: 1, 3]:
+Para inspeccionar la secuencia de tokens reconocidos por el lexer:
 ```bash
 python3 src/cli.py --tokens examples/correcto_ventas.dz
 ```
 
-Para visualizar el árbol de derivación sintáctica completo en formato jerárquico[cite: 1, 3]:
+Para visualizar el árbol de derivación sintáctica completo en formato jerárquico:
 ```bash
 python3 src/cli.py --tree examples/correcto_ventas.dz
 ```
 
-Para probar el reporte de errores en un archivo con errores intencionales[cite: 1, 3]:
+Para probar el reporte de errores en un archivo con errores intencionales:
 ```bash
 python3 src/cli.py examples/incorrecto_sintaxis.dz
 python3 src/cli.py examples/incorrecto_lexico.dz
