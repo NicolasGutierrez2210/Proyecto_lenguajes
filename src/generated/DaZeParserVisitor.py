@@ -1,4 +1,4 @@
-# Generated from grammar/DaZeParser.g4 by ANTLR 4.13.2
+# Generated from DaZeParser.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
     from .DaZeParser import DaZeParser
@@ -84,53 +84,53 @@ class DaZeParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_seleccionar.
-    def visitOp_seleccionar(self, ctx:DaZeParser.Op_seleccionarContext):
+    # Visit a parse tree produced by DaZeParser#op_convocar.
+    def visitOp_convocar(self, ctx:DaZeParser.Op_convocarContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_filtrar.
-    def visitOp_filtrar(self, ctx:DaZeParser.Op_filtrarContext):
+    # Visit a parse tree produced by DaZeParser#op_descartar.
+    def visitOp_descartar(self, ctx:DaZeParser.Op_descartarContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_crear.
-    def visitOp_crear(self, ctx:DaZeParser.Op_crearContext):
+    # Visit a parse tree produced by DaZeParser#op_contratar.
+    def visitOp_contratar(self, ctx:DaZeParser.Op_contratarContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_renombrar.
-    def visitOp_renombrar(self, ctx:DaZeParser.Op_renombrarContext):
+    # Visit a parse tree produced by DaZeParser#op_rebautizar.
+    def visitOp_rebautizar(self, ctx:DaZeParser.Op_rebautizarContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_ordenar.
-    def visitOp_ordenar(self, ctx:DaZeParser.Op_ordenarContext):
+    # Visit a parse tree produced by DaZeParser#op_clasificar.
+    def visitOp_clasificar(self, ctx:DaZeParser.Op_clasificarContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_agrupar.
-    def visitOp_agrupar(self, ctx:DaZeParser.Op_agruparContext):
+    # Visit a parse tree produced by DaZeParser#op_alinear.
+    def visitOp_alinear(self, ctx:DaZeParser.Op_alinearContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_resumir.
-    def visitOp_resumir(self, ctx:DaZeParser.Op_resumirContext):
+    # Visit a parse tree produced by DaZeParser#op_balance.
+    def visitOp_balance(self, ctx:DaZeParser.Op_balanceContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_tratar_nulos.
-    def visitOp_tratar_nulos(self, ctx:DaZeParser.Op_tratar_nulosContext):
+    # Visit a parse tree produced by DaZeParser#op_reemplazar_bajas.
+    def visitOp_reemplazar_bajas(self, ctx:DaZeParser.Op_reemplazar_bajasContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_eliminar_duplicados.
-    def visitOp_eliminar_duplicados(self, ctx:DaZeParser.Op_eliminar_duplicadosContext):
+    # Visit a parse tree produced by DaZeParser#op_depurar_plantilla.
+    def visitOp_depurar_plantilla(self, ctx:DaZeParser.Op_depurar_plantillaContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#op_limitar.
-    def visitOp_limitar(self, ctx:DaZeParser.Op_limitarContext):
+    # Visit a parse tree produced by DaZeParser#op_top.
+    def visitOp_top(self, ctx:DaZeParser.Op_topContext):
         return self.visitChildren(ctx)
 
 
@@ -289,11 +289,6 @@ class DaZeParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by DaZeParser#ExprCargar.
-    def visitExprCargar(self, ctx:DaZeParser.ExprCargarContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by DaZeParser#ExprVerdadero.
     def visitExprVerdadero(self, ctx:DaZeParser.ExprVerdaderoContext):
         return self.visitChildren(ctx)
@@ -301,6 +296,11 @@ class DaZeParserVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by DaZeParser#ExprNulo.
     def visitExprNulo(self, ctx:DaZeParser.ExprNuloContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by DaZeParser#ExprFichar.
+    def visitExprFichar(self, ctx:DaZeParser.ExprFicharContext):
         return self.visitChildren(ctx)
 
 

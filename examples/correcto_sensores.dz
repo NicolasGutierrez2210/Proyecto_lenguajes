@@ -1,43 +1,31 @@
-# Monitoreo de sensores ambientales y condiciones climaticas
+# Monitoreo biometrico de chalecos GPS durante el entrenamiento
 
-# 1. Definicion de funciones auxiliares
-funcion calcular_indice_calor(temperatura, humedad) {
-    retornar temperatura + (0.5555 * ((humedad / 100) * 10 - 10));
+# 1. Carga de telemetria de sensores de entrenamiento
+telemetria = fichar("datos/gps_rendimiento.csv", separador=";");
+
+# 2. Definicion de tactica (funcion) para evaluacion de sobreesfuerzo
+tactica alerta_sobrecarga(frecuencia_cardiaca, distancia_km) {
+    si (frecuencia_cardiaca > 185) {
+        proyectar("Alerta: Sobrecarga cardiovascular detectada");
+    } sino {
+        proyectar("Rango aerobico optimo");
+    }
+    resultado frecuencia_cardiaca * 1.05;
 }
 
-# 2. Carga y procesamiento del flujo de datos
-sensores = cargar("datos/lecturas_iot.csv")
-
-lecturas_validas = sensores
-    |> filtrar(temperatura >= -10.0 y temperatura <= 60.0 y humedad >= 0 y humedad <= 100)
-    |> crear(
-        indice_calor = calcular_indice_calor(temperatura, humedad),
-        alerta_critica = temperatura > 35.0 o humedad < 20.0
+# 3. Limpieza de mediciones y deteccion de desgaste
+gps_filtrado = telemetria
+    |> descartar(ritmo_cardiaco > 40 y velocidad_max <= 38.5)
+    |> contratar(
+        gasto_calorico = minutos_jugados * 11.4,
+        indice_desgaste = sprint_count * 2.5
     )
-    |> ordenar(por=[indice_calor], descendente=falso)
+    |> top(100);
 
-# 3. Agregacion por ubicacion del sensor
-resumen_zonas = lecturas_validas
-    |> agrupar(por=[zona_instalacion])
-    |> resumir(
-        temp_promedio = media(temperatura),
-        hum_promedio = media(humedad),
-        temp_max = maximo(temperatura),
-        muestras_registradas = contar()
-    )
-
-# 4. Graficos de monitoreo
-graficar lineas(lecturas_validas) {
-    eje_x = timestamp
-    eje_y = temperatura
-    titulo = "Serie Temporal de Temperatura"
-    guardar = "salidas/serie_temperatura.png"
-}
-
-# 5. Condicional de alerta y guardado
-si (resumen_zonas != nulo) {
-    guardar(resumen_zonas, en="salidas/resumen_zonas.csv");
-    mostrar("Procesamiento de sensores finalizado con exito");
-} sino {
-    mostrar("No se encontraron registros validos para procesar");
+# 4. Pizarra de dispersion para correlacion fisica
+pizarra dispersion(gps_filtrado) {
+    eje_x = ritmo_cardiaco;
+    eje_y = indice_desgaste;
+    titulo = "Correlacion Ritmo Cardiaco vs Desgaste";
+    guardar = "salidas/monitoreo_gps.png";
 }

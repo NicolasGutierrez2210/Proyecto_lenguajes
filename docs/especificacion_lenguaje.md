@@ -1,20 +1,20 @@
-# Especificacion del Lenguaje DaZe (.dz)
+# Especificacion del Lenguaje DaZe (.dz) - Sports Analytics DSL
 
 ## 1. Delimitacion del Dominio y Casos de Uso
 
-DaZe es un lenguaje de dominio especifico (DSL) disenado para modelar flujos de trabajo reproducibles en ciencia de datos, preparacion tabular y visualizacion descriptiva. El lenguaje combina una sintaxis funcional/declarativa basada en pipelines (`|>`) con una estructura en espanol que facilita la lectura y el diseno de pipelines de transformacion.
+DaZe es un lenguaje de dominio especifico (DSL) disenado para modelar flujos de trabajo reproducibles en analitica deportiva, preparacion de plantillas y generacion de pizarras tacticas[cite: 2, 3]. El lenguaje combina una sintaxis funcional/declarativa basada en pipelines (`|>`) con una estructura en espanol adaptada al ambito tecnico del deporte, facilitando el diseno de transformaciones sin requerir codigo complejo de proposito general[cite: 2, 3].
 
 ### Perfil de Usuarios
-- Estudiantes e investigadores en analitica y ciencia de datos.
-- Desarrolladores que requieran describir pipelines de ETL y resumenes estadisticos de forma compacta y legible.
+- Analistas de rendimiento, directores tecnicos y cuerpos tecnicos deportivos.
+- Desarrolladores e investigadores que requieran procesar telemetria, estadisticas de jugadores y metricas de partidos de forma compacta y legible.
 
 ### Entradas y Salidas
-- **Entradas**: Archivos tabulares en formato CSV (con soporte de delimitadores personalizados y encabezados), literales escalares y expresiones calculadas.
-- **Salidas**: Tablas transformadas exportables a archivos CSV, declaraciones estructuradas de visualizacion (barras, lineas, histogramas, dispersion, caja) y mensajes en consola.
+- **Entradas**: Archivos tabulares en formato CSV con metricas de rendimiento deportivo (con soporte de delimitadores y encabezados), literales escalares y expresiones evaluadas[cite: 2].
+- **Salidas**: Tablas transformadas y consolidadas exportables a CSV, declaraciones estructuradas de pizarras visuales (barras, lineas, histogramas, dispersion, caja) y proyecciones en consola[cite: 2].
 
 ### Restricciones
-- El lenguaje no busca ser un sustituto de proposito general para Python, sino un DSL declarativo enfocado en transformacion de datos tabulares.
-- Toda operacion en un pipeline recibe un conjunto de datos y genera una nueva transformacion sin mutacion silenciosa de estados anteriores.
+- El lenguaje no busca ser un sustituto de proposito general para Python, sino un DSL declarativo enfocado en analisis y rendimiento deportivo[cite: 2].
+- Toda operacion en un pipeline recibe una plantilla/conjunto de datos y genera una nueva transformacion sin mutacion destructiva de estados anteriores[cite: 2].
 
 ---
 
@@ -24,102 +24,102 @@ DaZe es un lenguaje de dominio especifico (DSL) disenado para modelar flujos de 
 |---|---|---|
 | Entero | Valores numericos enteros | `10`, `0`, `-5` |
 | Decimal | Valores numericos en punto flotante | `3.1416`, `0.05`, `99.9` |
-| Cadena | Texto delimitado por comillas simples o dobles | `"ventas.csv"`, `'Alta'` |
+| Cadena | Texto delimitado por comillas simples o dobles | `"plantilla.csv"`, `'Delantero'` |
 | Booleano | Valores logicos | `verdadero`, `falso`, `true`, `false` |
-| Nulo | Ausencia de valor o valor faltante | `nulo`, `null` |
-| Lista | Coleccion de elementos o columnas | `[col1, col2]`, `["A", "B"]` |
-| Tabla | Coleccion tabular cargada o derivada | Resultado de `cargar(...)` o `|>` |
+| Nulo | Ausencia de registro o valor faltante | `nulo`, `null` |
+| Lista | Coleccion de elementos o columnas | `[dorsal, goles]`, `["A", "B"]` |
+| Tabla | Coleccion tabular cargada o derivada | Resultado de `fichar(...)` o `|>` |
 
 ---
 
 ## 3. Operadores y Precedencia
 
 ### Aritmeticos
-- Potencia: `^` o `**` (asociatividad a derecha)
-- Unarios: `+`, `-`, `no` / `not` / `!`
-- Multiplicativos: `*`, `/`, `%`
-- Aditivos: `+`, `-`
+- Potencia: `^` o `**` (asociatividad a derecha)[cite: 4]
+- Unarios: `+`, `-`, `no` / `not` / `!`[cite: 4]
+- Multiplicativos: `*`, `/`, `%`[cite: 4]
+- Aditivos: `+`, `-`[cite: 4]
 
 ### Relacionales
-- Comparaciones: `<`, `<=`, `>`, `>=`
-- Igualdad: `==`, `!=`
+- Comparaciones: `<`, `<=`, `>`, `>=`[cite: 2, 4]
+- Igualdad: `==`, `!=`[cite: 2, 4]
 
 ### Logicos
-- Conjuncion: `y`, `and`, `&&`
-- Disyuncion: `o`, `or`, `||`
-- Negacion: `no`, `not`, `!`
+- Conjuncion: `y`, `and`, `&&`[cite: 2, 4]
+- Disyuncion: `o`, `or`, `||`[cite: 2, 4]
+- Negacion: `no`, `not`, `!`[cite: 2, 4]
 
 ---
 
 ## 4. Catalogo de Instrucciones y Palabras Reservadas
 
 ### 4.1. Carga y Guardado de Datos
-- **`cargar(ruta, ...)`**: Carga un dataset desde disco. Permite configurar argumentos con nombre como `separador=","` y `encabezado=verdadero`.
+- **`fichar(ruta, ...)`**: Carga una plantilla desde disco. Permite configurar argumentos con nombre como `separador=","` y `encabezado=verdadero`[cite: 2].
   ```daze
-  datos = cargar("datos/ventas.csv", separador=",", encabezado=verdadero)
+  datos = fichar("datos/plantilla_temporada.csv", separador=",", encabezado=verdadero)
   ```
-- **`guardar(dataset, en="ruta", ...)`**: Exporta un dataset a un archivo CSV.
+- **`archivar(dataset, en="ruta", ...)`**: Exporta los resultados o balances a un archivo CSV[cite: 2].
   ```daze
-  guardar(resumen, en="salidas/reporte.csv", separador=";")
+  archivar(resumen, en="salidas/balance_posiciones.csv", separador=";")
   ```
 
 ### 4.2. Operaciones de Pipeline (`|>`)
-- **`seleccionar(col1, col2, ...)`**: Filtra y proyecta un subconjunto de columnas.
+- **`convocar(col1, col2, ...)`**: Proyecta y selecciona un subconjunto de columnas o variables del jugador[cite: 2].
   ```daze
-  datos |> seleccionar(fecha, ciudad, total)
+  datos |> convocar(nombre, posicion, minutos, goles)
   ```
-- **`filtrar(condicion)`**: Filtra registros que cumplan la condicion booleana.
+- **`descartar(condicion)`**: Filtra registros que cumplan con un criterio condicional booleano[cite: 2].
   ```daze
-  datos |> filtrar(total > 100 y estado == "activo")
+  datos |> descartar(minutos > 0 y goles >= 0)
   ```
-- **`crear(nueva_col = expr, ...)`**: Agrega o actualiza columnas calculadas.
+- **`contratar(nueva_col = expr, ...)`**: Agrega o calcula nuevas metricas deportivas sobre la plantilla.
   ```daze
-  datos |> crear(total_iva = subtotal * 1.19, margen = utilidad / total)
+  datos |> contratar(rendimiento_total = (goles * 1.5) + (minutos / 100))
   ```
-- **`renombrar(col_antigua = nueva_col, ...)`**: Renombra variables del dataset.
+- **`rebautizar(col_antigua = nueva_col, ...)`**: Renombra atributos o metricas del dataset.
   ```daze
-  datos |> renombrar(antiguo_id = "codigo_estudiante")
+  datos |> rebautizar(antiguo_id = "dorsal")
   ```
-- **`ordenar(por=[col1], descendente=verdadero)`**: Ordena el dataset de manera ascendente o descendente.
+- **`clasificar(por=[col1], descendente=verdadero)`**: Ordena las filas en funcion del rendimiento de forma ascendente o descendente[cite: 2].
   ```daze
-  datos |> ordenar(por=[total_iva], descendente=verdadero)
+  datos |> clasificar(por=[rendimiento_total], descendente=verdadero)
   ```
-- **`agrupar(por=[col1, col2])`**: Define las claves de agrupamiento para calculos agregados posteriores.
+- **`alinear(por=[col1, col2])`**: Define los grupos tacticos para calculos posteriores (ej. agrupar por posicion o club)[cite: 2].
   ```daze
-  datos |> agrupar(por=[categoria, ciudad])
+  datos |> alinear(por=[posicion])
   ```
-- **`resumir(alias = func(col), ...)`**: Ejecuta calculos agregados sobre las columnas agrupadas.
-  - Funciones disponibles: `contar()`, `suma(col)`, `media(col)`, `mediana(col)`, `minimo(col)`, `maximo(col)`, `desv_std(col)`.
+- **`balance(alias = func(col), ...)`**: Ejecuta calculos agregados y resumenes descriptivos sobre la agrupacion[cite: 2].
+  - Funciones disponibles: `contar()`, `suma(col)`, `media(col)`, `mediana(col)`, `minimo(col)`, `maximo(col)`, `desv_std(col)`[cite: 2].
   ```daze
-  datos |> resumir(ingreso = suma(total), cantidad = contar(), promedio = media(precio))
+  datos |> balance(goles_totales = suma(goles), total_convocados = contar(), promedio = media(minutos))
   ```
-- **`tratar_nulos(accion="eliminar" | "rellenar", valor=...)`**: Tratamiento de valores faltantes.
+- **`reemplazar_bajas(accion="eliminar" | "rellenar", valor=...)`**: Tratamiento de datos nulos o bajas medicas en la plantilla[cite: 2].
   ```daze
-  datos |> tratar_nulos(accion="rellenar", valor=0.0)
+  datos |> reemplazar_bajas(accion="rellenar", valor=0.0)
   ```
-- **`eliminar_duplicados(...)`**: Remueve filas redundantes.
+- **`depurar_plantilla(...)`**: Remueve registros duplicados o redundantes de jugadores[cite: 2].
   ```daze
-  datos |> eliminar_duplicados(columnas=[id_usuario])
+  datos |> depurar_plantilla(columnas=[dorsal])
   ```
-- **`limitar(n)`**: Conserva las primeras `n` filas.
+- **`top(n)`**: Conserva los primeros `n` registros destacados del pipeline.
   ```daze
-  datos |> limitar(10)
+  datos |> top(11)
   ```
 
 ### 4.3. Declaracion de Visualizaciones
-- **`graficar tipo(dataset) { configuraciones }`**:
-  Tipos admitidos: `barras`, `lineas`, `histograma`, `dispersion`, `caja`.
-  Propiedades comunes: `eje_x`, `eje_y`, `titulo`, `color`, `guardar`, `mostrar`.
+- **`pizarra tipo(dataset) { configuraciones }`**:
+  Tipos admitidos: `barras`, `lineas`, `histograma`, `dispersion`, `caja`[cite: 2].
+  Propiedades comunes: `eje_x`, `eje_y`, `titulo`, `color`, `guardar`, `proyectar`.
   ```daze
-  graficar barras(resumen_ventas) {
-      eje_x = ciudad
-      eje_y = ingreso
-      titulo = "Ventas por Ciudad"
-      guardar = "salidas/grafico_ventas.png"
+  pizarra barras(resumen_posiciones) {
+      eje_x = posicion
+      eje_y = goles_totales
+      titulo = "Goles por Posicion"
+      guardar = "salidas/pizarra_goles.png"
   }
   ```
 
 ### 4.4. Estructuras de Control y Modularidad
-- **`funcion nombre(p1, p2) { ... retornar expr; }`**: Declaracion de subrutinas y calculos reutilizables.
-- **`si (condicion) { ... } sino { ... }`**: Bifurcacion condicional.
-- **`mostrar(expr)`**: Impresion informativa en la consola de salida.
+- **`tactica nombre(p1, p2) { ... resultado expr; }`**: Declaracion de subrutinas o formulas reutilizables[cite: 2].
+- **`si (condicion) { ... } sino { ... }`**: Estructura de bifurcacion condicional[cite: 2].
+- **`proyectar(expr)`**: Salida informativa en consola.

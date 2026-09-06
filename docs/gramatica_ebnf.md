@@ -1,6 +1,6 @@
-# Gramatica EBNF de DaZe
+# Gramatica EBNF de DaZe - Sports Analytics DSL
 
-A continuacion se presenta la especificacion sintactica formal de DaZe en formato EBNF (Extended Backus-Naur Form).
+A continuacion se presenta la especificacion sintactica formal de DaZe adaptada al dominio deportivo en formato EBNF (Extended Backus-Naur Form)[cite: 2].
 
 ```ebnf
 programa            ::= { sentencia } EOF ;
@@ -21,49 +21,49 @@ pipeline_stmt       ::= [ identificador '=' ] expr { '|>' operacion_pipeline }+ 
 
 llamada_stmt        ::= identificador '(' [ lista_argumentos ] ')' [ ';' ] ;
 
-graficar_stmt       ::= 'graficar' tipo_grafico '(' expr ')' '{' { configuracion_grafico } '}' [ ';' ]
-                      | 'graficar' tipo_grafico '(' expr ')' [ ';' ] ;
+graficar_stmt       ::= 'pizarra' tipo_grafico '(' expr ')' '{' { configuracion_grafico } '}' [ ';' ]
+                      | 'pizarra' tipo_grafico '(' expr ')' [ ';' ] ;
 
 tipo_grafico        ::= 'barras' | 'lineas' | 'histograma' | 'dispersion' | 'caja' ;
 
 configuracion_grafico ::= identificador '=' expr [ ';' ] ;
 
-guardar_stmt        ::= 'guardar' '(' expr ',' 'en' '=' CADENA [ ',' argumentos_con_nombre ] ')' [ ';' ]
-                      | 'guardar' '(' expr ',' CADENA [ ',' argumentos_con_nombre ] ')' [ ';' ]
-                      | 'guardar' expr 'en' CADENA [ 'como' identificador ] [ ';' ] ;
+guardar_stmt        ::= 'archivar' '(' expr ',' 'en' '=' CADENA [ ',' argumentos_con_nombre ] ')' [ ';' ]
+                      | 'archivar' '(' expr ',' CADENA [ ',' argumentos_con_nombre ] ')' [ ';' ]
+                      | 'archivar' expr 'en' CADENA [ 'como' identificador ] [ ';' ] ;
 
-mostrar_stmt        ::= 'mostrar' '(' expr ')' [ ';' ] ;
+mostrar_stmt        ::= 'proyectar' '(' expr ')' [ ';' ] ;
 
 si_stmt             ::= 'si' '(' expr ')' '{' { sentencia } '}' [ 'sino' '{' { sentencia } '}' ] [ ';' ] ;
 
-funcion_stmt        ::= 'funcion' identificador '(' [ lista_parametros ] ')' '{' { sentencia } '}' [ ';' ] ;
+funcion_stmt        ::= 'tactica' identificador '(' [ lista_parametros ] ')' '{' { sentencia } '}' [ ';' ] ;
 
-retornar_stmt       ::= 'retornar' [ expr ] [ ';' ] ;
+retornar_stmt       ::= 'resultado' [ expr ] [ ';' ] ;
 
 lista_parametros    ::= identificador { ',' identificador } ;
 
-operacion_pipeline  ::= op_seleccionar
-                      | op_filtrar
-                      | op_crear
-                      | op_renombrar
-                      | op_ordenar
-                      | op_agrupar
-                      | op_resumir
-                      | op_tratar_nulos
-                      | op_eliminar_duplicados
-                      | op_limitar
+operacion_pipeline  ::= op_convocar
+                      | op_descartar
+                      | op_contratar
+                      | op_rebautizar
+                      | op_clasificar
+                      | op_alinear
+                      | op_balance
+                      | op_reemplazar_bajas
+                      | op_depurar_plantilla
+                      | op_top
                       | op_personalizada ;
 
-op_seleccionar      ::= 'seleccionar' '(' lista_columnas ')' ;
-op_filtrar          ::= 'filtrar' '(' expr ')' | 'filtrar' 'donde' expr ;
-op_crear            ::= 'crear' '(' lista_asignaciones ')' ;
-op_renombrar        ::= 'renombrar' '(' lista_asignaciones ')' ;
-op_ordenar          ::= 'ordenar' '(' argumentos_ordenar ')' ;
-op_agrupar          ::= 'agrupar' '(' argumentos_agrupar ')' | 'agrupar' 'por' [ '[' ] lista_columnas [ ']' ] ;
-op_resumir          ::= 'resumir' '(' lista_resumen ')' ;
-op_tratar_nulos     ::= 'tratar_nulos' '(' argumentos_con_nombre ')' ;
-op_eliminar_duplicados ::= 'eliminar_duplicados' '(' [ argumentos_con_nombre | lista_columnas ] ')' ;
-op_limitar          ::= 'limitar' '(' ENTERO ')' ;
+op_convocar         ::= 'convocar' '(' lista_columnas ')' ;
+op_descartar        ::= 'descartar' '(' expr ')' | 'descartar' 'donde' expr ;
+op_contratar        ::= 'contratar' '(' lista_asignaciones ')' ;
+op_rebautizar       ::= 'rebautizar' '(' lista_asignaciones ')' ;
+op_clasificar       ::= 'clasificar' '(' argumentos_ordenar ')' ;
+op_alinear          ::= 'alinear' '(' argumentos_agrupar ')' | 'alinear' 'por' [ '[' ] lista_columnas [ ']' ] ;
+op_balance          ::= 'balance' '(' lista_resumen ')' ;
+op_reemplazar_bajas ::= 'reemplazar_bajas' '(' argumentos_con_nombre ')' ;
+op_depurar_plantilla ::= 'depurar_plantilla' '(' [ argumentos_con_nombre | lista_columnas ] ')' ;
+op_top              ::= 'top' '(' ENTERO ')' ;
 op_personalizada    ::= identificador '(' [ lista_argumentos ] ')' ;
 
 argumentos_ordenar  ::= lista_argumentos ;
@@ -96,7 +96,7 @@ expr                ::= expr ( '^' | '**' ) expr
                       | expr ( '==' | '!=' ) expr
                       | expr ( 'y' | 'and' | '&&' ) expr
                       | expr ( 'o' | 'or' | '||' ) expr
-                      | 'cargar' '(' CADENA [ ',' argumentos_con_nombre ] ')'
+                      | 'fichar' '(' CADENA [ ',' argumentos_con_nombre ] ')'
                       | identificador '(' [ lista_argumentos ] ')'
                       | '[' [ lista_expr ] ']'
                       | '(' expr ')'

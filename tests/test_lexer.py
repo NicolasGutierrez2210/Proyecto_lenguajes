@@ -6,28 +6,27 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from src import tokenize_code, DaZeLexer
 
-
 class TestDaZeLexer(unittest.TestCase):
 
     def test_palabras_reservadas(self):
-        codigo = "cargar guardar seleccionar filtrar crear renombrar ordenar agrupar resumir graficar si sino funcion retornar"
+        codigo = "fichar archivar convocar descartar contratar rebautizar clasificar alinear balance pizarra si sino tactica resultado"
         tokens = [t for t in tokenize_code(codigo) if t.text != "<EOF>"]
         
         expected_types = [
-            DaZeLexer.CARGAR,
-            DaZeLexer.GUARDAR,
-            DaZeLexer.SELECCIONAR,
-            DaZeLexer.FILTRAR,
-            DaZeLexer.CREAR,
-            DaZeLexer.RENOMBRAR,
-            DaZeLexer.ORDENAR,
-            DaZeLexer.AGRUPAR,
-            DaZeLexer.RESUMIR,
-            DaZeLexer.GRAFICAR,
+            DaZeLexer.FICHAR,
+            DaZeLexer.ARCHIVAR,
+            DaZeLexer.CONVOCAR,
+            DaZeLexer.DESCARTAR,
+            DaZeLexer.CONTRATAR,
+            DaZeLexer.REBAUTIZAR,
+            DaZeLexer.CLASIFICAR,
+            DaZeLexer.ALINEAR,
+            DaZeLexer.BALANCE,
+            DaZeLexer.PIZARRA,
             DaZeLexer.SI,
             DaZeLexer.SINO,
-            DaZeLexer.FUNCION,
-            DaZeLexer.RETORNAR,
+            DaZeLexer.TACTICA,
+            DaZeLexer.RESULTADO,
         ]
         
         token_types = [t.type for t in tokens]
@@ -110,7 +109,6 @@ class TestDaZeLexer(unittest.TestCase):
         self.assertEqual(tokens[1].text, "=")
         self.assertEqual(tokens[2].text, "10")
         self.assertEqual(tokens[3].text, ";")
-
 
 if __name__ == "__main__":
     unittest.main()

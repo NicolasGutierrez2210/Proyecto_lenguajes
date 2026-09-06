@@ -1,4 +1,4 @@
-# Generated from grammar/DaZeParser.g4 by ANTLR 4.13.2
+# Generated from DaZeParser.g4 by ANTLR 4.13.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -217,11 +217,11 @@ class DaZeParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'cargar'", "'guardar'", "'seleccionar'", 
-                     "'filtrar'", "'crear'", "'renombrar'", "'ordenar'", 
-                     "'agrupar'", "'resumir'", "'tratar_nulos'", "'eliminar_duplicados'", 
-                     "'limitar'", "'graficar'", "'mostrar'", "'retornar'", 
-                     "'funcion'", "'si'", "'sino'", "'en'", "'por'", "'donde'", 
+    literalNames = [ "<INVALID>", "'fichar'", "'archivar'", "'convocar'", 
+                     "'descartar'", "'contratar'", "'rebautizar'", "'clasificar'", 
+                     "'alinear'", "'balance'", "'reemplazar_bajas'", "'depurar_plantilla'", 
+                     "'top'", "'pizarra'", "'proyectar'", "'resultado'", 
+                     "'tactica'", "'si'", "'sino'", "'en'", "'por'", "'donde'", 
                      "'como'", "'ascendente'", "'descendente'", "<INVALID>", 
                      "'suma'", "<INVALID>", "'mediana'", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "'barras'", "'lineas'", "'histograma'", 
@@ -232,11 +232,11 @@ class DaZeParser ( Parser ):
                      "'('", "')'", "'['", "']'", "'{'", "'}'", "','", "';'", 
                      "':'" ]
 
-    symbolicNames = [ "<INVALID>", "CARGAR", "GUARDAR", "SELECCIONAR", "FILTRAR", 
-                      "CREAR", "RENOMBRAR", "ORDENAR", "AGRUPAR", "RESUMIR", 
-                      "TRATAR_NULOS", "ELIMINAR_DUPLICADOS", "LIMITAR", 
-                      "GRAFICAR", "MOSTRAR", "RETORNAR", "FUNCION", "SI", 
-                      "SINO", "EN", "POR", "DONDE", "COMO", "ASCENDENTE", 
+    symbolicNames = [ "<INVALID>", "FICHAR", "ARCHIVAR", "CONVOCAR", "DESCARTAR", 
+                      "CONTRATAR", "REBAUTIZAR", "CLASIFICAR", "ALINEAR", 
+                      "BALANCE", "REEMPLAZAR_BAJAS", "DEPURAR_PLANTILLA", 
+                      "TOP", "PIZARRA", "PROYECTAR", "RESULTADO", "TACTICA", 
+                      "SI", "SINO", "EN", "POR", "DONDE", "COMO", "ASCENDENTE", 
                       "DESCENDENTE", "CONTAR", "SUMA", "MEDIA", "MEDIANA", 
                       "MINIMO", "MAXIMO", "DESV_STD", "BARRAS", "LINEAS", 
                       "HISTOGRAMA", "DISPERSION", "CAJA", "VERDADERO", "FALSO", 
@@ -263,16 +263,16 @@ class DaZeParser ( Parser ):
     RULE_retornar_stmt = 12
     RULE_lista_parametros = 13
     RULE_operacion_pipeline = 14
-    RULE_op_seleccionar = 15
-    RULE_op_filtrar = 16
-    RULE_op_crear = 17
-    RULE_op_renombrar = 18
-    RULE_op_ordenar = 19
-    RULE_op_agrupar = 20
-    RULE_op_resumir = 21
-    RULE_op_tratar_nulos = 22
-    RULE_op_eliminar_duplicados = 23
-    RULE_op_limitar = 24
+    RULE_op_convocar = 15
+    RULE_op_descartar = 16
+    RULE_op_contratar = 17
+    RULE_op_rebautizar = 18
+    RULE_op_clasificar = 19
+    RULE_op_alinear = 20
+    RULE_op_balance = 21
+    RULE_op_reemplazar_bajas = 22
+    RULE_op_depurar_plantilla = 23
+    RULE_op_top = 24
     RULE_op_personalizada = 25
     RULE_argumentos_ordenar = 26
     RULE_argumentos_agrupar = 27
@@ -296,9 +296,9 @@ class DaZeParser ( Parser ):
                    "llamada_stmt", "graficar_stmt", "tipo_grafico", "configuracion_grafico", 
                    "guardar_stmt", "mostrar_stmt", "si_stmt", "funcion_stmt", 
                    "retornar_stmt", "lista_parametros", "operacion_pipeline", 
-                   "op_seleccionar", "op_filtrar", "op_crear", "op_renombrar", 
-                   "op_ordenar", "op_agrupar", "op_resumir", "op_tratar_nulos", 
-                   "op_eliminar_duplicados", "op_limitar", "op_personalizada", 
+                   "op_convocar", "op_descartar", "op_contratar", "op_rebautizar", 
+                   "op_clasificar", "op_alinear", "op_balance", "op_reemplazar_bajas", 
+                   "op_depurar_plantilla", "op_top", "op_personalizada", 
                    "argumentos_ordenar", "argumentos_agrupar", "lista_columnas", 
                    "lista_nombres_columna", "nombre_columna", "lista_asignaciones", 
                    "asignacion_par", "lista_resumen", "resumen_par", "funcion_agregacion", 
@@ -306,22 +306,22 @@ class DaZeParser ( Parser ):
                    "argumento", "expr", "lista_expr", "identificador" ]
 
     EOF = Token.EOF
-    CARGAR=1
-    GUARDAR=2
-    SELECCIONAR=3
-    FILTRAR=4
-    CREAR=5
-    RENOMBRAR=6
-    ORDENAR=7
-    AGRUPAR=8
-    RESUMIR=9
-    TRATAR_NULOS=10
-    ELIMINAR_DUPLICADOS=11
-    LIMITAR=12
-    GRAFICAR=13
-    MOSTRAR=14
-    RETORNAR=15
-    FUNCION=16
+    FICHAR=1
+    ARCHIVAR=2
+    CONVOCAR=3
+    DESCARTAR=4
+    CONTRATAR=5
+    REBAUTIZAR=6
+    CLASIFICAR=7
+    ALINEAR=8
+    BALANCE=9
+    REEMPLAZAR_BAJAS=10
+    DEPURAR_PLANTILLA=11
+    TOP=12
+    PIZARRA=13
+    PROYECTAR=14
+    RESULTADO=15
+    TACTICA=16
     SI=17
     SINO=18
     EN=19
@@ -852,8 +852,8 @@ class DaZeParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def GRAFICAR(self):
-            return self.getToken(DaZeParser.GRAFICAR, 0)
+        def PIZARRA(self):
+            return self.getToken(DaZeParser.PIZARRA, 0)
 
         def tipo_grafico(self):
             return self.getTypedRuleContext(DaZeParser.Tipo_graficoContext,0)
@@ -917,7 +917,7 @@ class DaZeParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 135
-                self.match(DaZeParser.GRAFICAR)
+                self.match(DaZeParser.PIZARRA)
                 self.state = 136
                 self.tipo_grafico()
                 self.state = 137
@@ -953,7 +953,7 @@ class DaZeParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 151
-                self.match(DaZeParser.GRAFICAR)
+                self.match(DaZeParser.PIZARRA)
                 self.state = 152
                 self.tipo_grafico()
                 self.state = 153
@@ -1125,8 +1125,8 @@ class DaZeParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def GUARDAR(self):
-            return self.getToken(DaZeParser.GUARDAR, 0)
+        def ARCHIVAR(self):
+            return self.getToken(DaZeParser.ARCHIVAR, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -1199,7 +1199,7 @@ class DaZeParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 169
-                self.match(DaZeParser.GUARDAR)
+                self.match(DaZeParser.ARCHIVAR)
                 self.state = 170
                 self.match(DaZeParser.LPAREN)
                 self.state = 171
@@ -1237,7 +1237,7 @@ class DaZeParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 184
-                self.match(DaZeParser.GUARDAR)
+                self.match(DaZeParser.ARCHIVAR)
                 self.state = 185
                 self.match(DaZeParser.LPAREN)
                 self.state = 186
@@ -1271,7 +1271,7 @@ class DaZeParser ( Parser ):
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 197
-                self.match(DaZeParser.GUARDAR)
+                self.match(DaZeParser.ARCHIVAR)
                 self.state = 198
                 self.expr(0)
                 self.state = 199
@@ -1315,8 +1315,8 @@ class DaZeParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def MOSTRAR(self):
-            return self.getToken(DaZeParser.MOSTRAR, 0)
+        def PROYECTAR(self):
+            return self.getToken(DaZeParser.PROYECTAR, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -1359,7 +1359,7 @@ class DaZeParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 210
-            self.match(DaZeParser.MOSTRAR)
+            self.match(DaZeParser.PROYECTAR)
             self.state = 211
             self.match(DaZeParser.LPAREN)
             self.state = 212
@@ -1523,8 +1523,8 @@ class DaZeParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def FUNCION(self):
-            return self.getToken(DaZeParser.FUNCION, 0)
+        def TACTICA(self):
+            return self.getToken(DaZeParser.TACTICA, 0)
 
         def identificador(self):
             return self.getTypedRuleContext(DaZeParser.IdentificadorContext,0)
@@ -1584,7 +1584,7 @@ class DaZeParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 243
-            self.match(DaZeParser.FUNCION)
+            self.match(DaZeParser.TACTICA)
             self.state = 244
             self.identificador()
             self.state = 245
@@ -1637,8 +1637,8 @@ class DaZeParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def RETORNAR(self):
-            return self.getToken(DaZeParser.RETORNAR, 0)
+        def RESULTADO(self):
+            return self.getToken(DaZeParser.RESULTADO, 0)
 
         def expr(self):
             return self.getTypedRuleContext(DaZeParser.ExprContext,0)
@@ -1675,7 +1675,7 @@ class DaZeParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 261
-            self.match(DaZeParser.RETORNAR)
+            self.match(DaZeParser.RESULTADO)
             self.state = 263
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,28,self._ctx)
@@ -1778,44 +1778,44 @@ class DaZeParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def op_seleccionar(self):
-            return self.getTypedRuleContext(DaZeParser.Op_seleccionarContext,0)
+        def op_convocar(self):
+            return self.getTypedRuleContext(DaZeParser.Op_convocarContext,0)
 
 
-        def op_filtrar(self):
-            return self.getTypedRuleContext(DaZeParser.Op_filtrarContext,0)
+        def op_descartar(self):
+            return self.getTypedRuleContext(DaZeParser.Op_descartarContext,0)
 
 
-        def op_crear(self):
-            return self.getTypedRuleContext(DaZeParser.Op_crearContext,0)
+        def op_contratar(self):
+            return self.getTypedRuleContext(DaZeParser.Op_contratarContext,0)
 
 
-        def op_renombrar(self):
-            return self.getTypedRuleContext(DaZeParser.Op_renombrarContext,0)
+        def op_rebautizar(self):
+            return self.getTypedRuleContext(DaZeParser.Op_rebautizarContext,0)
 
 
-        def op_ordenar(self):
-            return self.getTypedRuleContext(DaZeParser.Op_ordenarContext,0)
+        def op_clasificar(self):
+            return self.getTypedRuleContext(DaZeParser.Op_clasificarContext,0)
 
 
-        def op_agrupar(self):
-            return self.getTypedRuleContext(DaZeParser.Op_agruparContext,0)
+        def op_alinear(self):
+            return self.getTypedRuleContext(DaZeParser.Op_alinearContext,0)
 
 
-        def op_resumir(self):
-            return self.getTypedRuleContext(DaZeParser.Op_resumirContext,0)
+        def op_balance(self):
+            return self.getTypedRuleContext(DaZeParser.Op_balanceContext,0)
 
 
-        def op_tratar_nulos(self):
-            return self.getTypedRuleContext(DaZeParser.Op_tratar_nulosContext,0)
+        def op_reemplazar_bajas(self):
+            return self.getTypedRuleContext(DaZeParser.Op_reemplazar_bajasContext,0)
 
 
-        def op_eliminar_duplicados(self):
-            return self.getTypedRuleContext(DaZeParser.Op_eliminar_duplicadosContext,0)
+        def op_depurar_plantilla(self):
+            return self.getTypedRuleContext(DaZeParser.Op_depurar_plantillaContext,0)
 
 
-        def op_limitar(self):
-            return self.getTypedRuleContext(DaZeParser.Op_limitarContext,0)
+        def op_top(self):
+            return self.getTypedRuleContext(DaZeParser.Op_topContext,0)
 
 
         def op_personalizada(self):
@@ -1853,61 +1853,61 @@ class DaZeParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 276
-                self.op_seleccionar()
+                self.op_convocar()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 277
-                self.op_filtrar()
+                self.op_descartar()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 278
-                self.op_crear()
+                self.op_contratar()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 279
-                self.op_renombrar()
+                self.op_rebautizar()
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 280
-                self.op_ordenar()
+                self.op_clasificar()
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 281
-                self.op_agrupar()
+                self.op_alinear()
                 pass
 
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 282
-                self.op_resumir()
+                self.op_balance()
                 pass
 
             elif la_ == 8:
                 self.enterOuterAlt(localctx, 8)
                 self.state = 283
-                self.op_tratar_nulos()
+                self.op_reemplazar_bajas()
                 pass
 
             elif la_ == 9:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 284
-                self.op_eliminar_duplicados()
+                self.op_depurar_plantilla()
                 pass
 
             elif la_ == 10:
                 self.enterOuterAlt(localctx, 10)
                 self.state = 285
-                self.op_limitar()
+                self.op_top()
                 pass
 
             elif la_ == 11:
@@ -1926,15 +1926,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_seleccionarContext(ParserRuleContext):
+    class Op_convocarContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def SELECCIONAR(self):
-            return self.getToken(DaZeParser.SELECCIONAR, 0)
+        def CONVOCAR(self):
+            return self.getToken(DaZeParser.CONVOCAR, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -1947,33 +1947,33 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_seleccionar
+            return DaZeParser.RULE_op_convocar
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_seleccionar" ):
-                listener.enterOp_seleccionar(self)
+            if hasattr( listener, "enterOp_convocar" ):
+                listener.enterOp_convocar(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_seleccionar" ):
-                listener.exitOp_seleccionar(self)
+            if hasattr( listener, "exitOp_convocar" ):
+                listener.exitOp_convocar(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_seleccionar" ):
-                return visitor.visitOp_seleccionar(self)
+            if hasattr( visitor, "visitOp_convocar" ):
+                return visitor.visitOp_convocar(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_seleccionar(self):
+    def op_convocar(self):
 
-        localctx = DaZeParser.Op_seleccionarContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_op_seleccionar)
+        localctx = DaZeParser.Op_convocarContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 30, self.RULE_op_convocar)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 289
-            self.match(DaZeParser.SELECCIONAR)
+            self.match(DaZeParser.CONVOCAR)
             self.state = 290
             self.match(DaZeParser.LPAREN)
             self.state = 291
@@ -1989,15 +1989,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_filtrarContext(ParserRuleContext):
+    class Op_descartarContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def FILTRAR(self):
-            return self.getToken(DaZeParser.FILTRAR, 0)
+        def DESCARTAR(self):
+            return self.getToken(DaZeParser.DESCARTAR, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2013,29 +2013,29 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.DONDE, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_filtrar
+            return DaZeParser.RULE_op_descartar
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_filtrar" ):
-                listener.enterOp_filtrar(self)
+            if hasattr( listener, "enterOp_descartar" ):
+                listener.enterOp_descartar(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_filtrar" ):
-                listener.exitOp_filtrar(self)
+            if hasattr( listener, "exitOp_descartar" ):
+                listener.exitOp_descartar(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_filtrar" ):
-                return visitor.visitOp_filtrar(self)
+            if hasattr( visitor, "visitOp_descartar" ):
+                return visitor.visitOp_descartar(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_filtrar(self):
+    def op_descartar(self):
 
-        localctx = DaZeParser.Op_filtrarContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 32, self.RULE_op_filtrar)
+        localctx = DaZeParser.Op_descartarContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 32, self.RULE_op_descartar)
         try:
             self.state = 302
             self._errHandler.sync(self)
@@ -2043,7 +2043,7 @@ class DaZeParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 294
-                self.match(DaZeParser.FILTRAR)
+                self.match(DaZeParser.DESCARTAR)
                 self.state = 295
                 self.match(DaZeParser.LPAREN)
                 self.state = 296
@@ -2055,7 +2055,7 @@ class DaZeParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 299
-                self.match(DaZeParser.FILTRAR)
+                self.match(DaZeParser.DESCARTAR)
                 self.state = 300
                 self.match(DaZeParser.DONDE)
                 self.state = 301
@@ -2072,15 +2072,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_crearContext(ParserRuleContext):
+    class Op_contratarContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def CREAR(self):
-            return self.getToken(DaZeParser.CREAR, 0)
+        def CONTRATAR(self):
+            return self.getToken(DaZeParser.CONTRATAR, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2093,33 +2093,33 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_crear
+            return DaZeParser.RULE_op_contratar
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_crear" ):
-                listener.enterOp_crear(self)
+            if hasattr( listener, "enterOp_contratar" ):
+                listener.enterOp_contratar(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_crear" ):
-                listener.exitOp_crear(self)
+            if hasattr( listener, "exitOp_contratar" ):
+                listener.exitOp_contratar(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_crear" ):
-                return visitor.visitOp_crear(self)
+            if hasattr( visitor, "visitOp_contratar" ):
+                return visitor.visitOp_contratar(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_crear(self):
+    def op_contratar(self):
 
-        localctx = DaZeParser.Op_crearContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 34, self.RULE_op_crear)
+        localctx = DaZeParser.Op_contratarContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 34, self.RULE_op_contratar)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 304
-            self.match(DaZeParser.CREAR)
+            self.match(DaZeParser.CONTRATAR)
             self.state = 305
             self.match(DaZeParser.LPAREN)
             self.state = 306
@@ -2135,15 +2135,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_renombrarContext(ParserRuleContext):
+    class Op_rebautizarContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def RENOMBRAR(self):
-            return self.getToken(DaZeParser.RENOMBRAR, 0)
+        def REBAUTIZAR(self):
+            return self.getToken(DaZeParser.REBAUTIZAR, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2156,33 +2156,33 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_renombrar
+            return DaZeParser.RULE_op_rebautizar
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_renombrar" ):
-                listener.enterOp_renombrar(self)
+            if hasattr( listener, "enterOp_rebautizar" ):
+                listener.enterOp_rebautizar(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_renombrar" ):
-                listener.exitOp_renombrar(self)
+            if hasattr( listener, "exitOp_rebautizar" ):
+                listener.exitOp_rebautizar(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_renombrar" ):
-                return visitor.visitOp_renombrar(self)
+            if hasattr( visitor, "visitOp_rebautizar" ):
+                return visitor.visitOp_rebautizar(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_renombrar(self):
+    def op_rebautizar(self):
 
-        localctx = DaZeParser.Op_renombrarContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 36, self.RULE_op_renombrar)
+        localctx = DaZeParser.Op_rebautizarContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 36, self.RULE_op_rebautizar)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 309
-            self.match(DaZeParser.RENOMBRAR)
+            self.match(DaZeParser.REBAUTIZAR)
             self.state = 310
             self.match(DaZeParser.LPAREN)
             self.state = 311
@@ -2198,15 +2198,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_ordenarContext(ParserRuleContext):
+    class Op_clasificarContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def ORDENAR(self):
-            return self.getToken(DaZeParser.ORDENAR, 0)
+        def CLASIFICAR(self):
+            return self.getToken(DaZeParser.CLASIFICAR, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2219,33 +2219,33 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_ordenar
+            return DaZeParser.RULE_op_clasificar
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_ordenar" ):
-                listener.enterOp_ordenar(self)
+            if hasattr( listener, "enterOp_clasificar" ):
+                listener.enterOp_clasificar(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_ordenar" ):
-                listener.exitOp_ordenar(self)
+            if hasattr( listener, "exitOp_clasificar" ):
+                listener.exitOp_clasificar(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_ordenar" ):
-                return visitor.visitOp_ordenar(self)
+            if hasattr( visitor, "visitOp_clasificar" ):
+                return visitor.visitOp_clasificar(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_ordenar(self):
+    def op_clasificar(self):
 
-        localctx = DaZeParser.Op_ordenarContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 38, self.RULE_op_ordenar)
+        localctx = DaZeParser.Op_clasificarContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 38, self.RULE_op_clasificar)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 314
-            self.match(DaZeParser.ORDENAR)
+            self.match(DaZeParser.CLASIFICAR)
             self.state = 315
             self.match(DaZeParser.LPAREN)
             self.state = 316
@@ -2261,15 +2261,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_agruparContext(ParserRuleContext):
+    class Op_alinearContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def AGRUPAR(self):
-            return self.getToken(DaZeParser.AGRUPAR, 0)
+        def ALINEAR(self):
+            return self.getToken(DaZeParser.ALINEAR, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2295,29 +2295,29 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.RBRACK, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_agrupar
+            return DaZeParser.RULE_op_alinear
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_agrupar" ):
-                listener.enterOp_agrupar(self)
+            if hasattr( listener, "enterOp_alinear" ):
+                listener.enterOp_alinear(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_agrupar" ):
-                listener.exitOp_agrupar(self)
+            if hasattr( listener, "exitOp_alinear" ):
+                listener.exitOp_alinear(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_agrupar" ):
-                return visitor.visitOp_agrupar(self)
+            if hasattr( visitor, "visitOp_alinear" ):
+                return visitor.visitOp_alinear(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_agrupar(self):
+    def op_alinear(self):
 
-        localctx = DaZeParser.Op_agruparContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 40, self.RULE_op_agrupar)
+        localctx = DaZeParser.Op_alinearContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 40, self.RULE_op_alinear)
         try:
             self.state = 333
             self._errHandler.sync(self)
@@ -2325,7 +2325,7 @@ class DaZeParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 319
-                self.match(DaZeParser.AGRUPAR)
+                self.match(DaZeParser.ALINEAR)
                 self.state = 320
                 self.match(DaZeParser.LPAREN)
                 self.state = 321
@@ -2337,7 +2337,7 @@ class DaZeParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 324
-                self.match(DaZeParser.AGRUPAR)
+                self.match(DaZeParser.ALINEAR)
                 self.state = 325
                 self.match(DaZeParser.POR)
                 self.state = 326
@@ -2351,7 +2351,7 @@ class DaZeParser ( Parser ):
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 330
-                self.match(DaZeParser.AGRUPAR)
+                self.match(DaZeParser.ALINEAR)
                 self.state = 331
                 self.match(DaZeParser.POR)
                 self.state = 332
@@ -2368,15 +2368,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_resumirContext(ParserRuleContext):
+    class Op_balanceContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def RESUMIR(self):
-            return self.getToken(DaZeParser.RESUMIR, 0)
+        def BALANCE(self):
+            return self.getToken(DaZeParser.BALANCE, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2389,33 +2389,33 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_resumir
+            return DaZeParser.RULE_op_balance
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_resumir" ):
-                listener.enterOp_resumir(self)
+            if hasattr( listener, "enterOp_balance" ):
+                listener.enterOp_balance(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_resumir" ):
-                listener.exitOp_resumir(self)
+            if hasattr( listener, "exitOp_balance" ):
+                listener.exitOp_balance(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_resumir" ):
-                return visitor.visitOp_resumir(self)
+            if hasattr( visitor, "visitOp_balance" ):
+                return visitor.visitOp_balance(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_resumir(self):
+    def op_balance(self):
 
-        localctx = DaZeParser.Op_resumirContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 42, self.RULE_op_resumir)
+        localctx = DaZeParser.Op_balanceContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 42, self.RULE_op_balance)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 335
-            self.match(DaZeParser.RESUMIR)
+            self.match(DaZeParser.BALANCE)
             self.state = 336
             self.match(DaZeParser.LPAREN)
             self.state = 337
@@ -2431,15 +2431,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_tratar_nulosContext(ParserRuleContext):
+    class Op_reemplazar_bajasContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def TRATAR_NULOS(self):
-            return self.getToken(DaZeParser.TRATAR_NULOS, 0)
+        def REEMPLAZAR_BAJAS(self):
+            return self.getToken(DaZeParser.REEMPLAZAR_BAJAS, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2452,33 +2452,33 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_tratar_nulos
+            return DaZeParser.RULE_op_reemplazar_bajas
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_tratar_nulos" ):
-                listener.enterOp_tratar_nulos(self)
+            if hasattr( listener, "enterOp_reemplazar_bajas" ):
+                listener.enterOp_reemplazar_bajas(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_tratar_nulos" ):
-                listener.exitOp_tratar_nulos(self)
+            if hasattr( listener, "exitOp_reemplazar_bajas" ):
+                listener.exitOp_reemplazar_bajas(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_tratar_nulos" ):
-                return visitor.visitOp_tratar_nulos(self)
+            if hasattr( visitor, "visitOp_reemplazar_bajas" ):
+                return visitor.visitOp_reemplazar_bajas(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_tratar_nulos(self):
+    def op_reemplazar_bajas(self):
 
-        localctx = DaZeParser.Op_tratar_nulosContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 44, self.RULE_op_tratar_nulos)
+        localctx = DaZeParser.Op_reemplazar_bajasContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 44, self.RULE_op_reemplazar_bajas)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 340
-            self.match(DaZeParser.TRATAR_NULOS)
+            self.match(DaZeParser.REEMPLAZAR_BAJAS)
             self.state = 341
             self.match(DaZeParser.LPAREN)
             self.state = 342
@@ -2494,15 +2494,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_eliminar_duplicadosContext(ParserRuleContext):
+    class Op_depurar_plantillaContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def ELIMINAR_DUPLICADOS(self):
-            return self.getToken(DaZeParser.ELIMINAR_DUPLICADOS, 0)
+        def DEPURAR_PLANTILLA(self):
+            return self.getToken(DaZeParser.DEPURAR_PLANTILLA, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2519,33 +2519,33 @@ class DaZeParser ( Parser ):
 
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_eliminar_duplicados
+            return DaZeParser.RULE_op_depurar_plantilla
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_eliminar_duplicados" ):
-                listener.enterOp_eliminar_duplicados(self)
+            if hasattr( listener, "enterOp_depurar_plantilla" ):
+                listener.enterOp_depurar_plantilla(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_eliminar_duplicados" ):
-                listener.exitOp_eliminar_duplicados(self)
+            if hasattr( listener, "exitOp_depurar_plantilla" ):
+                listener.exitOp_depurar_plantilla(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_eliminar_duplicados" ):
-                return visitor.visitOp_eliminar_duplicados(self)
+            if hasattr( visitor, "visitOp_depurar_plantilla" ):
+                return visitor.visitOp_depurar_plantilla(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_eliminar_duplicados(self):
+    def op_depurar_plantilla(self):
 
-        localctx = DaZeParser.Op_eliminar_duplicadosContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 46, self.RULE_op_eliminar_duplicados)
+        localctx = DaZeParser.Op_depurar_plantillaContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 46, self.RULE_op_depurar_plantilla)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 345
-            self.match(DaZeParser.ELIMINAR_DUPLICADOS)
+            self.match(DaZeParser.DEPURAR_PLANTILLA)
             self.state = 346
             self.match(DaZeParser.LPAREN)
             self.state = 349
@@ -2571,15 +2571,15 @@ class DaZeParser ( Parser ):
         return localctx
 
 
-    class Op_limitarContext(ParserRuleContext):
+    class Op_topContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def LIMITAR(self):
-            return self.getToken(DaZeParser.LIMITAR, 0)
+        def TOP(self):
+            return self.getToken(DaZeParser.TOP, 0)
 
         def LPAREN(self):
             return self.getToken(DaZeParser.LPAREN, 0)
@@ -2591,33 +2591,33 @@ class DaZeParser ( Parser ):
             return self.getToken(DaZeParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return DaZeParser.RULE_op_limitar
+            return DaZeParser.RULE_op_top
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_limitar" ):
-                listener.enterOp_limitar(self)
+            if hasattr( listener, "enterOp_top" ):
+                listener.enterOp_top(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_limitar" ):
-                listener.exitOp_limitar(self)
+            if hasattr( listener, "exitOp_top" ):
+                listener.exitOp_top(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOp_limitar" ):
-                return visitor.visitOp_limitar(self)
+            if hasattr( visitor, "visitOp_top" ):
+                return visitor.visitOp_top(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def op_limitar(self):
+    def op_top(self):
 
-        localctx = DaZeParser.Op_limitarContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 48, self.RULE_op_limitar)
+        localctx = DaZeParser.Op_topContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 48, self.RULE_op_top)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 353
-            self.match(DaZeParser.LIMITAR)
+            self.match(DaZeParser.TOP)
             self.state = 354
             self.match(DaZeParser.LPAREN)
             self.state = 355
@@ -4158,41 +4158,6 @@ class DaZeParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
-    class ExprCargarContext(ExprContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a DaZeParser.ExprContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def CARGAR(self):
-            return self.getToken(DaZeParser.CARGAR, 0)
-        def LPAREN(self):
-            return self.getToken(DaZeParser.LPAREN, 0)
-        def CADENA(self):
-            return self.getToken(DaZeParser.CADENA, 0)
-        def RPAREN(self):
-            return self.getToken(DaZeParser.RPAREN, 0)
-        def COMA(self):
-            return self.getToken(DaZeParser.COMA, 0)
-        def argumentos_con_nombre(self):
-            return self.getTypedRuleContext(DaZeParser.Argumentos_con_nombreContext,0)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExprCargar" ):
-                listener.enterExprCargar(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExprCargar" ):
-                listener.exitExprCargar(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExprCargar" ):
-                return visitor.visitExprCargar(self)
-            else:
-                return visitor.visitChildren(self)
-
-
     class ExprVerdaderoContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a DaZeParser.ExprContext
@@ -4241,6 +4206,41 @@ class DaZeParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
+    class ExprFicharContext(ExprContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DaZeParser.ExprContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def FICHAR(self):
+            return self.getToken(DaZeParser.FICHAR, 0)
+        def LPAREN(self):
+            return self.getToken(DaZeParser.LPAREN, 0)
+        def CADENA(self):
+            return self.getToken(DaZeParser.CADENA, 0)
+        def RPAREN(self):
+            return self.getToken(DaZeParser.RPAREN, 0)
+        def COMA(self):
+            return self.getToken(DaZeParser.COMA, 0)
+        def argumentos_con_nombre(self):
+            return self.getTypedRuleContext(DaZeParser.Argumentos_con_nombreContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExprFichar" ):
+                listener.enterExprFichar(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExprFichar" ):
+                listener.exitExprFichar(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExprFichar" ):
+                return visitor.visitExprFichar(self)
+            else:
+                return visitor.visitChildren(self)
+
+
 
     def expr(self, _p:int=0):
         _parentctx = self._ctx
@@ -4272,11 +4272,11 @@ class DaZeParser ( Parser ):
                 pass
 
             elif la_ == 2:
-                localctx = DaZeParser.ExprCargarContext(self, localctx)
+                localctx = DaZeParser.ExprFicharContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 457
-                self.match(DaZeParser.CARGAR)
+                self.match(DaZeParser.FICHAR)
                 self.state = 458
                 self.match(DaZeParser.LPAREN)
                 self.state = 459
@@ -4682,53 +4682,53 @@ class DaZeParser ( Parser ):
         def CAJA(self):
             return self.getToken(DaZeParser.CAJA, 0)
 
-        def GUARDAR(self):
-            return self.getToken(DaZeParser.GUARDAR, 0)
+        def ARCHIVAR(self):
+            return self.getToken(DaZeParser.ARCHIVAR, 0)
 
-        def CARGAR(self):
-            return self.getToken(DaZeParser.CARGAR, 0)
+        def FICHAR(self):
+            return self.getToken(DaZeParser.FICHAR, 0)
 
-        def SELECCIONAR(self):
-            return self.getToken(DaZeParser.SELECCIONAR, 0)
+        def CONVOCAR(self):
+            return self.getToken(DaZeParser.CONVOCAR, 0)
 
-        def FILTRAR(self):
-            return self.getToken(DaZeParser.FILTRAR, 0)
+        def DESCARTAR(self):
+            return self.getToken(DaZeParser.DESCARTAR, 0)
 
-        def CREAR(self):
-            return self.getToken(DaZeParser.CREAR, 0)
+        def CONTRATAR(self):
+            return self.getToken(DaZeParser.CONTRATAR, 0)
 
-        def RENOMBRAR(self):
-            return self.getToken(DaZeParser.RENOMBRAR, 0)
+        def REBAUTIZAR(self):
+            return self.getToken(DaZeParser.REBAUTIZAR, 0)
 
-        def ORDENAR(self):
-            return self.getToken(DaZeParser.ORDENAR, 0)
+        def CLASIFICAR(self):
+            return self.getToken(DaZeParser.CLASIFICAR, 0)
 
-        def AGRUPAR(self):
-            return self.getToken(DaZeParser.AGRUPAR, 0)
+        def ALINEAR(self):
+            return self.getToken(DaZeParser.ALINEAR, 0)
 
-        def RESUMIR(self):
-            return self.getToken(DaZeParser.RESUMIR, 0)
+        def BALANCE(self):
+            return self.getToken(DaZeParser.BALANCE, 0)
 
-        def TRATAR_NULOS(self):
-            return self.getToken(DaZeParser.TRATAR_NULOS, 0)
+        def REEMPLAZAR_BAJAS(self):
+            return self.getToken(DaZeParser.REEMPLAZAR_BAJAS, 0)
 
-        def ELIMINAR_DUPLICADOS(self):
-            return self.getToken(DaZeParser.ELIMINAR_DUPLICADOS, 0)
+        def DEPURAR_PLANTILLA(self):
+            return self.getToken(DaZeParser.DEPURAR_PLANTILLA, 0)
 
-        def LIMITAR(self):
-            return self.getToken(DaZeParser.LIMITAR, 0)
+        def TOP(self):
+            return self.getToken(DaZeParser.TOP, 0)
 
-        def GRAFICAR(self):
-            return self.getToken(DaZeParser.GRAFICAR, 0)
+        def PIZARRA(self):
+            return self.getToken(DaZeParser.PIZARRA, 0)
 
-        def MOSTRAR(self):
-            return self.getToken(DaZeParser.MOSTRAR, 0)
+        def PROYECTAR(self):
+            return self.getToken(DaZeParser.PROYECTAR, 0)
 
-        def RETORNAR(self):
-            return self.getToken(DaZeParser.RETORNAR, 0)
+        def RESULTADO(self):
+            return self.getToken(DaZeParser.RESULTADO, 0)
 
-        def FUNCION(self):
-            return self.getToken(DaZeParser.FUNCION, 0)
+        def TACTICA(self):
+            return self.getToken(DaZeParser.TACTICA, 0)
 
         def getRuleIndex(self):
             return DaZeParser.RULE_identificador

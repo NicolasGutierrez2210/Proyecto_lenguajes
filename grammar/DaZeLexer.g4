@@ -1,22 +1,22 @@
 lexer grammar DaZeLexer;
 
-// Palabras reservadas principales
-CARGAR: 'cargar';
-GUARDAR: 'guardar';
-SELECCIONAR: 'seleccionar';
-FILTRAR: 'filtrar';
-CREAR: 'crear';
-RENOMBRAR: 'renombrar';
-ORDENAR: 'ordenar';
-AGRUPAR: 'agrupar';
-RESUMIR: 'resumir';
-TRATAR_NULOS: 'tratar_nulos';
-ELIMINAR_DUPLICADOS: 'eliminar_duplicados';
-LIMITAR: 'limitar';
-GRAFICAR: 'graficar';
-MOSTRAR: 'mostrar';
-RETORNAR: 'retornar';
-FUNCION: 'funcion';
+// Palabras reservadas principales (Dominio Deportivo)
+FICHAR: 'fichar';
+ARCHIVAR: 'archivar';
+CONVOCAR: 'convocar';
+DESCARTAR: 'descartar';
+CONTRATAR: 'contratar';
+REBAUTIZAR: 'rebautizar';
+CLASIFICAR: 'clasificar';
+ALINEAR: 'alinear';
+BALANCE: 'balance';
+REEMPLAZAR_BAJAS: 'reemplazar_bajas';
+DEPURAR_PLANTILLA: 'depurar_plantilla';
+TOP: 'top';
+PIZARRA: 'pizarra';
+PROYECTAR: 'proyectar';
+RESULTADO: 'resultado';
+TACTICA: 'tactica';
 SI: 'si';
 SINO: 'sino';
 

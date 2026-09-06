@@ -1,41 +1,31 @@
-# Analisis de rendimiento academico de estudiantes
+# Flujo de evaluacion de canteranos y divisiones menores
 
-# 1. Carga de datos
-estudiantes = cargar("datos/notas_universidad.csv", separador=";", encabezado=verdadero)
+# 1. Carga de datos de la cantera
+cantera = fichar("datos/academia_juvenil.csv", separador=",", encabezado=verdadero);
 
-# 2. Limpieza de datos y creacion de columnas calculadas
-datos_procesados = estudiantes
-    |> tratar_nulos(accion="rellenar", valor=0.0)
-    |> eliminar_duplicados(columnas=[id_estudiante])
-    |> filtrar(estado == "matriculado" y asistencia >= 75)
-    |> crear(
-        nota_final = (parcial1 * 0.3) + (parcial2 * 0.3) + (proyecto * 0.4),
-        aprobado = nota_final >= 3.0
+# 2. Pipeline de seleccion y calculo de rendimiento academico-deportivo
+canteranos_promesa = cantera
+    |> convocar(id_juvenil, nombre, categoria, nota_tactica, nota_fisica, disciplina)
+    |> descartar(nota_tactica >= 60 y disciplina >= 70)
+    |> contratar(
+        promedio_rendimiento = (nota_tactica * 0.6) + (nota_fisica * 0.4),
+        apto_convocatoria = verdadero
     )
+    |> clasificar(por=[promedio_rendimiento], descendente=verdadero);
 
-# 3. Resumen por carrera academica
-resumen_carreras = datos_procesados
-    |> agrupar(por=[carrera])
-    |> resumir(
-        promedio_final = media(nota_final),
-        nota_maxima = maximo(nota_final),
-        nota_minima = minimo(nota_final),
-        total_alumnos = contar()
-    )
+# 3. Agrupacion por categoria y metricas del equipo
+balance_categorias = canteranos_promesa
+    |> alinear(por=[categoria])
+    |> balance(
+        promedio_general = media(promedio_rendimiento),
+        maxima_nota = maximo(nota_tactica),
+        total_evaluados = contar()
+    );
 
-# 4. Declaracion de graficas descriptivas
-graficar histograma(datos_procesados) {
-    eje_x = nota_final
-    titulo = "Distribucion de Notas Finales"
-    guardar = "salidas/distribucion_notas.png"
+# 4. Representacion en pizarra visual
+pizarra barras(balance_categorias) {
+    eje_x = categoria;
+    eje_y = promedio_general;
+    titulo = "Promedio de Rendimiento por Categoria Juvenil";
+    guardar = "salidas/rendimiento_juvenil.png";
 }
-
-graficar caja(datos_procesados) {
-    eje_x = carrera
-    eje_y = nota_final
-    titulo = "Rendimiento por Carrera"
-    guardar = "salidas/caja_carreras.png"
-}
-
-# 5. Guardar reporte final
-guardar(resumen_carreras, en="salidas/reporte_carreras.csv")

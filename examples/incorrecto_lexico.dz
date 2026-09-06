@@ -1,8 +1,7 @@
-# Ejemplo con errores lexicos intencionales para verificar el analizador lexico
+# Caso de prueba con error lexico intencional
+# El caracter '@' y '$' no pertenecen al alfabeto del DSL fuera de cadenas
 
-# Error lexico 1: Caracteres no permitidos en el lenguaje (@, $, ~)
-variable@invalida = 500 $ 20 ~ 3;
+plantilla = fichar("datos/plantilla.csv");
 
-# Error lexico 2: Cadena de texto sin comilla de cierre
-texto_invalido = "Cadena que nunca se cerro
-mostrar(texto_invalido)
+# Error lexico provocado aqui:
+jugadores_invalidos = plantilla |> descartar(minutos @ 90 $ valor);

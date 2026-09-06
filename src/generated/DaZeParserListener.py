@@ -1,4 +1,4 @@
-# Generated from grammar/DaZeParser.g4 by ANTLR 4.13.2
+# Generated from DaZeParser.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
     from .DaZeParser import DaZeParser
@@ -143,93 +143,93 @@ class DaZeParserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by DaZeParser#op_seleccionar.
-    def enterOp_seleccionar(self, ctx:DaZeParser.Op_seleccionarContext):
+    # Enter a parse tree produced by DaZeParser#op_convocar.
+    def enterOp_convocar(self, ctx:DaZeParser.Op_convocarContext):
         pass
 
-    # Exit a parse tree produced by DaZeParser#op_seleccionar.
-    def exitOp_seleccionar(self, ctx:DaZeParser.Op_seleccionarContext):
-        pass
-
-
-    # Enter a parse tree produced by DaZeParser#op_filtrar.
-    def enterOp_filtrar(self, ctx:DaZeParser.Op_filtrarContext):
-        pass
-
-    # Exit a parse tree produced by DaZeParser#op_filtrar.
-    def exitOp_filtrar(self, ctx:DaZeParser.Op_filtrarContext):
+    # Exit a parse tree produced by DaZeParser#op_convocar.
+    def exitOp_convocar(self, ctx:DaZeParser.Op_convocarContext):
         pass
 
 
-    # Enter a parse tree produced by DaZeParser#op_crear.
-    def enterOp_crear(self, ctx:DaZeParser.Op_crearContext):
+    # Enter a parse tree produced by DaZeParser#op_descartar.
+    def enterOp_descartar(self, ctx:DaZeParser.Op_descartarContext):
         pass
 
-    # Exit a parse tree produced by DaZeParser#op_crear.
-    def exitOp_crear(self, ctx:DaZeParser.Op_crearContext):
-        pass
-
-
-    # Enter a parse tree produced by DaZeParser#op_renombrar.
-    def enterOp_renombrar(self, ctx:DaZeParser.Op_renombrarContext):
-        pass
-
-    # Exit a parse tree produced by DaZeParser#op_renombrar.
-    def exitOp_renombrar(self, ctx:DaZeParser.Op_renombrarContext):
+    # Exit a parse tree produced by DaZeParser#op_descartar.
+    def exitOp_descartar(self, ctx:DaZeParser.Op_descartarContext):
         pass
 
 
-    # Enter a parse tree produced by DaZeParser#op_ordenar.
-    def enterOp_ordenar(self, ctx:DaZeParser.Op_ordenarContext):
+    # Enter a parse tree produced by DaZeParser#op_contratar.
+    def enterOp_contratar(self, ctx:DaZeParser.Op_contratarContext):
         pass
 
-    # Exit a parse tree produced by DaZeParser#op_ordenar.
-    def exitOp_ordenar(self, ctx:DaZeParser.Op_ordenarContext):
-        pass
-
-
-    # Enter a parse tree produced by DaZeParser#op_agrupar.
-    def enterOp_agrupar(self, ctx:DaZeParser.Op_agruparContext):
-        pass
-
-    # Exit a parse tree produced by DaZeParser#op_agrupar.
-    def exitOp_agrupar(self, ctx:DaZeParser.Op_agruparContext):
+    # Exit a parse tree produced by DaZeParser#op_contratar.
+    def exitOp_contratar(self, ctx:DaZeParser.Op_contratarContext):
         pass
 
 
-    # Enter a parse tree produced by DaZeParser#op_resumir.
-    def enterOp_resumir(self, ctx:DaZeParser.Op_resumirContext):
+    # Enter a parse tree produced by DaZeParser#op_rebautizar.
+    def enterOp_rebautizar(self, ctx:DaZeParser.Op_rebautizarContext):
         pass
 
-    # Exit a parse tree produced by DaZeParser#op_resumir.
-    def exitOp_resumir(self, ctx:DaZeParser.Op_resumirContext):
-        pass
-
-
-    # Enter a parse tree produced by DaZeParser#op_tratar_nulos.
-    def enterOp_tratar_nulos(self, ctx:DaZeParser.Op_tratar_nulosContext):
-        pass
-
-    # Exit a parse tree produced by DaZeParser#op_tratar_nulos.
-    def exitOp_tratar_nulos(self, ctx:DaZeParser.Op_tratar_nulosContext):
+    # Exit a parse tree produced by DaZeParser#op_rebautizar.
+    def exitOp_rebautizar(self, ctx:DaZeParser.Op_rebautizarContext):
         pass
 
 
-    # Enter a parse tree produced by DaZeParser#op_eliminar_duplicados.
-    def enterOp_eliminar_duplicados(self, ctx:DaZeParser.Op_eliminar_duplicadosContext):
+    # Enter a parse tree produced by DaZeParser#op_clasificar.
+    def enterOp_clasificar(self, ctx:DaZeParser.Op_clasificarContext):
         pass
 
-    # Exit a parse tree produced by DaZeParser#op_eliminar_duplicados.
-    def exitOp_eliminar_duplicados(self, ctx:DaZeParser.Op_eliminar_duplicadosContext):
+    # Exit a parse tree produced by DaZeParser#op_clasificar.
+    def exitOp_clasificar(self, ctx:DaZeParser.Op_clasificarContext):
         pass
 
 
-    # Enter a parse tree produced by DaZeParser#op_limitar.
-    def enterOp_limitar(self, ctx:DaZeParser.Op_limitarContext):
+    # Enter a parse tree produced by DaZeParser#op_alinear.
+    def enterOp_alinear(self, ctx:DaZeParser.Op_alinearContext):
         pass
 
-    # Exit a parse tree produced by DaZeParser#op_limitar.
-    def exitOp_limitar(self, ctx:DaZeParser.Op_limitarContext):
+    # Exit a parse tree produced by DaZeParser#op_alinear.
+    def exitOp_alinear(self, ctx:DaZeParser.Op_alinearContext):
+        pass
+
+
+    # Enter a parse tree produced by DaZeParser#op_balance.
+    def enterOp_balance(self, ctx:DaZeParser.Op_balanceContext):
+        pass
+
+    # Exit a parse tree produced by DaZeParser#op_balance.
+    def exitOp_balance(self, ctx:DaZeParser.Op_balanceContext):
+        pass
+
+
+    # Enter a parse tree produced by DaZeParser#op_reemplazar_bajas.
+    def enterOp_reemplazar_bajas(self, ctx:DaZeParser.Op_reemplazar_bajasContext):
+        pass
+
+    # Exit a parse tree produced by DaZeParser#op_reemplazar_bajas.
+    def exitOp_reemplazar_bajas(self, ctx:DaZeParser.Op_reemplazar_bajasContext):
+        pass
+
+
+    # Enter a parse tree produced by DaZeParser#op_depurar_plantilla.
+    def enterOp_depurar_plantilla(self, ctx:DaZeParser.Op_depurar_plantillaContext):
+        pass
+
+    # Exit a parse tree produced by DaZeParser#op_depurar_plantilla.
+    def exitOp_depurar_plantilla(self, ctx:DaZeParser.Op_depurar_plantillaContext):
+        pass
+
+
+    # Enter a parse tree produced by DaZeParser#op_top.
+    def enterOp_top(self, ctx:DaZeParser.Op_topContext):
+        pass
+
+    # Exit a parse tree produced by DaZeParser#op_top.
+    def exitOp_top(self, ctx:DaZeParser.Op_topContext):
         pass
 
 
@@ -512,15 +512,6 @@ class DaZeParserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by DaZeParser#ExprCargar.
-    def enterExprCargar(self, ctx:DaZeParser.ExprCargarContext):
-        pass
-
-    # Exit a parse tree produced by DaZeParser#ExprCargar.
-    def exitExprCargar(self, ctx:DaZeParser.ExprCargarContext):
-        pass
-
-
     # Enter a parse tree produced by DaZeParser#ExprVerdadero.
     def enterExprVerdadero(self, ctx:DaZeParser.ExprVerdaderoContext):
         pass
@@ -536,6 +527,15 @@ class DaZeParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by DaZeParser#ExprNulo.
     def exitExprNulo(self, ctx:DaZeParser.ExprNuloContext):
+        pass
+
+
+    # Enter a parse tree produced by DaZeParser#ExprFichar.
+    def enterExprFichar(self, ctx:DaZeParser.ExprFicharContext):
+        pass
+
+    # Exit a parse tree produced by DaZeParser#ExprFichar.
+    def exitExprFichar(self, ctx:DaZeParser.ExprFicharContext):
         pass
 
 

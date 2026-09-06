@@ -1,47 +1,44 @@
-# Flujo de analisis de ventas en DaZe
+# Flujo de analisis de rendimiento deportivo en DaZe
 
-# 1. Carga del conjunto de datos de ventas
-ventas = cargar("datos/ventas_comerciales.csv", separador=",", encabezado=verdadero)
+# 1. Carga del conjunto de datos de plantilla
+jugadores = fichar("datos/plantilla_temporada.csv", separador=",", encabezado=verdadero);
 
 # 2. Pipeline de preparacion y calculo de variables
-ventas_limpias = ventas
-    |> seleccionar(fecha, ciudad, categoria, unidades, precio_unitario, descuento)
-    |> filtrar(unidades > 0 y precio_unitario > 0)
-    |> crear(
-        subtotal = unidades * precio_unitario,
-        total_descuento = subtotal * (descuento / 100),
-        total_neto = subtotal - total_descuento,
-        impuesto = total_neto * 0.19
+jugadores_aptos = jugadores
+    |> convocar(dorsal, club, posicion, minutos, goles, asistencias)
+    |> descartar(minutos > 0 y goles >= 0)
+    |> contratar(
+        contribucion = goles + asistencias,
+        promedio_gol = (goles * 90) / minutos,
+        rendimiento_total = (contribucion * 1.5) + (minutos / 100),
+        indice_impacto = rendimiento_total * 0.19
     )
-    |> ordenar(por=[total_neto], descendente=verdadero)
+    |> clasificar(por=[rendimiento_total], descendente=verdadero);
 
 # 3. Agrupacion y calculo de metricas descriptivas
-resumen_ciudades = ventas_limpias
-    |> agrupar(por=[ciudad])
-    |> resumir(
-        ingresos_totales = suma(total_neto),
-        precio_promedio = media(precio_unitario),
-        mediana_unidades = mediana(unidades),
-        desv_precio = desv_std(precio_unitario),
-        transacciones = contar()
-    )
+resumen_posiciones = jugadores_aptos
+    |> alinear(por=[posicion])
+    |> balance(
+        goles_totales = suma(goles),
+        media_asistencias = media(asistencias),
+        mediana_minutos = mediana(minutos),
+        desv_rendimiento = desv_std(rendimiento_total),
+        total_convocados = contar()
+    );
 
 # 4. Declaracion de visualizaciones graficas
-graficar barras(resumen_ciudades) {
-    eje_x = ciudad
-    eje_y = ingresos_totales
-    titulo = "Ingresos Totales por Ciudad"
-    color = "azul"
-    guardar = "salidas/ventas_por_ciudad.png"
+pizarra barras(resumen_posiciones) {
+    eje_x = posicion;
+    eje_y = goles_totales;
+    titulo = "Goles Totales por Posicion";
+    color = "azul";
+    guardar = "salidas/goles_por_posicion.png";
 }
 
-graficar dispersion(ventas_limpias) {
-    eje_x = unidades
-    eje_y = total_neto
-    titulo = "Relacion Unidades vs Total Neto"
-    guardar = "salidas/dispersion_unidades.png"
+pizarra dispersion(jugadores_aptos) {
+    eje_x = minutos;
+    eje_y = rendimiento_total;
+    titulo = "Rendimiento vs Minutos Disputados";
+    color = "rojo";
+    guardar = "salidas/dispersion_rendimiento.png";
 }
-
-# 5. Exportacion del reporte tabular
-guardar(resumen_ciudades, en="salidas/resumen_ciudades.csv", separador=",")
-mostrar(resumen_ciudades)
