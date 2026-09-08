@@ -1,6 +1,6 @@
 # Gramatica EBNF de DaZe - Sports Analytics DSL
 
-A continuacion se presenta la especificacion sintactica formal de DaZe adaptada al dominio deportivo en formato EBNF (Extended Backus-Naur Form)[cite: 2].
+A continuacion se presenta la especificacion sintactica formal de DaZe adaptada al dominio deportivo en formato EBNF (Extended Backus-Naur Form).
 
 ```ebnf
 programa            ::= { sentencia } EOF ;
